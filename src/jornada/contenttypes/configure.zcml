@@ -1,0 +1,37 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:grok="http://namespaces.zope.org/grok"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    i18n_domain="jornada.contenttypes">
+
+  <five:registerPackage package="." />
+  <includeDependencies package="." />
+
+  <permission
+      id="jornada.contenttypes.AddArticle"
+      title="jornada.contenttypes: Add Article"
+      />
+
+  <grok:grok package="." />
+
+  <!-- Control panel -->
+  <browser:page
+      name="jornada-settings"
+      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+      class=".controlpanel.JornadaSettingsControlPanel"
+      permission="cmf.ManagePortal"
+      />
+
+  <genericsetup:registerProfile
+      name="default"
+      title="jornada.contenttypes"
+      directory="profiles/default"
+      description="Installs the jornada.contenttypes package"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+  <!-- -*- extra stuff goes here -*- -->
+
+</configure>
