@@ -32,6 +32,13 @@
       description="Installs the jornada.contenttypes package"
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
-  <!-- -*- extra stuff goes here -*- -->
+
+  <genericsetup:registerProfile
+      name="uninstall"
+      title="jornada.contenttypes:uninstall"
+      directory="profiles/uninstall"
+      description="Uninstalls the jornada.contenttypes package"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
 
 </configure>

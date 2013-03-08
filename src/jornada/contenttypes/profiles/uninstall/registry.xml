@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<registry>
+  <record name="jornada.contenttypes.controlpanel.IJornadaSettings.available_sections" delete="true" />
+  <record name="jornada.contenttypes.controlpanel.IJornadaSettings.default_section" delete="true" />
+</registry>
