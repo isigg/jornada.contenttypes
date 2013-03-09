@@ -8,7 +8,6 @@ from plone.app.testing import TEST_USER_ID
 from plone.dexterity.interfaces import IDexterityFTI
 from zope.component import createObject
 from zope.component import queryUtility
-from zope.interface import directlyProvides
 from zope.interface import Interface
 from plone.app.referenceablebehavior.referenceable import IReferenceable
 from plone.uuid.interfaces import IAttributeUUID

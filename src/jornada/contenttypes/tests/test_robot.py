@@ -1,4 +1,4 @@
-from  jornada.contenttypes.testing import JORNADA_CONTENTTYPES_FUNCTIONAL_TESTING
+from jornada.contenttypes.testing import JORNADA_CONTENTTYPES_FUNCTIONAL_TESTING
 from plone.testing import layered
 import robotsuite
 import unittest
