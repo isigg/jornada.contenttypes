@@ -13,12 +13,6 @@ from zope.schema.vocabulary import SimpleVocabulary
 
 grok.templatedir('templates')
 
-sections = SimpleVocabulary([
-    SimpleTerm(value=u'Estados', title=_(u"Estados")),
-    SimpleTerm(value=u'Mundo', title=_(u"Mundo")),
-    SimpleTerm(value=u'Politica', title=_(u"Política")),
-])
-
 
 class IArticle(form.Schema):
     """An article. Defines a news article.
@@ -38,7 +32,7 @@ class IArticle(form.Schema):
 
     section = schema.Choice(
         title=_(u"Section"),
-        vocabulary=sections,
+        vocabulary='jornada.contenttypes.AvailableSections',
     )
 
     location = schema.TextLine(
