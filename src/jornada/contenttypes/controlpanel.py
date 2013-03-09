@@ -15,11 +15,11 @@ class IJornadaSettings(form.Schema):
         value_type=schema.TextLine(title=_(u"Section")),
     )
 
-    # default_section = schema.Choice(
-    #     title=_(u"Default Section"),
-    #     vocabulary=u'jornada.contenttypes.AvailableSections',
-    #     required=False,
-    # )
+    default_section = schema.Choice(
+        title=_(u"Default Section"),
+        vocabulary=u'jornada.contenttypes.AvailableSections',
+        required=False,
+    )
 
 
 class JornadaSettingsEditForm(controlpanel.RegistryEditForm):

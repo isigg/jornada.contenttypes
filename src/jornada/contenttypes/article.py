@@ -2,14 +2,14 @@
 
 from five import grok
 from jornada.contenttypes import _
+from jornada.contenttypes.controlpanel import IJornadaSettings
 from plone.app.textfield import RichText
 from plone.dexterity import content
-from plone.directives import dexterity
 from plone.directives import form
 from plone.namedfile.field import NamedBlobImage
+from plone.registry.interfaces import IRegistry
 from zope import schema
-from zope.schema.vocabulary import SimpleTerm
-from zope.schema.vocabulary import SimpleVocabulary
+from zope.component import getUtility
 
 grok.templatedir('templates')
 
@@ -42,6 +42,13 @@ class IArticle(form.Schema):
     image = NamedBlobImage(
         title=_(u"Image")
     )
+
+
+@form.default_value(field=IArticle['section'])
+def section_default_value(data):
+    registry = getUtility(IRegistry)
+    settings = registry.forInterface(IJornadaSettings)
+    return settings.default_section
 
 
 class Article(content.Item):
