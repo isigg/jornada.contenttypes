@@ -9,6 +9,7 @@
 
   <five:registerPackage package="." />
   <includeDependencies package="." />
+  <include package=".portlets" />
 
   <permission
       id="jornada.contenttypes.AddArticle"
