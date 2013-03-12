@@ -18,7 +18,7 @@
  <property name="klass">jornada.contenttypes.article.Article</property>
 
  <!-- add permission -->
- <property name="add_permission">cmf.AddPortalContent</property>
+ <property name="add_permission">jornada.contenttypes.AddArticle</property>
 
  <!-- enabled behaviors -->
  <property name="behaviors">
