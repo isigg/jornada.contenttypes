@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+from jornada.contenttypes.article import check_capitalize
 from jornada.contenttypes.article import IArticle
 from jornada.contenttypes.testing import JORNADA_CONTENTTYPES_INTEGRATION_TESTING
 from plone.app.customerize import registration
@@ -13,6 +14,15 @@ from plone.app.referenceablebehavior.referenceable import IReferenceable
 from plone.uuid.interfaces import IAttributeUUID
 
 import unittest
+
+
+class ConstrainTestCase(unittest.TestCase):
+
+    def test_check_capitalize(self):
+        self.assertTrue(check_capitalize(u"The quick brown fox jumps over the lazy dog"))
+        self.assertTrue(check_capitalize(u"Lorem"))
+        self.assertFalse(check_capitalize(u"THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG"))
+        self.assertFalse(check_capitalize(u"lorem"))
 
 
 class ArticleTestCase(unittest.TestCase):

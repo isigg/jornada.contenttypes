@@ -14,12 +14,18 @@ from zope.component import getUtility
 grok.templatedir('templates')
 
 
+def check_capitalize(value):
+    return value == value.capitalize()
+
+
 class IArticle(form.Schema):
     """An article. Defines a news article.
     """
 
     subtitle = schema.TextLine(
         title=_(u"Subtitle"),
+        description=_(u"Please enter a capitalized sentence."),
+        constraint=check_capitalize,
     )
 
     author = schema.TextLine(
